@@ -540,7 +540,7 @@
  * Multiple extruders can be assigned to the same pin in which case
  * the fan will turn on when any selected extruder is above the threshold.
  */
-//视新板子是用哪个管脚来接风扇，比如为PAx，则在Configuration_adv.h中定义#define E0_AUTO_FAN_PIN PAx即可。 
+//视新板子是用哪个管脚来接风扇，比如为PAx，则在Configuration_adv.h中定义#define E0_AUTO_FAN_PIN PAx即可。
 //按新硬件原理图，假设用PC0接喉管风扇，改为#define E0_AUTO_FAN_PIN PC0，当喉管温度大于EXTRUDER_AUTO_FAN_TEMPERATURE时喉管风扇开启 --zy
 #define E0_AUTO_FAN_PIN PC0
 #define E1_AUTO_FAN_PIN -1
@@ -1843,10 +1843,10 @@
  *
  * See https://marlinfw.org/docs/features/lin_advance.html for full instructions.
  */
-//#define LIN_ADVANCE
+#define LIN_ADVANCE
 #if ENABLED(LIN_ADVANCE)
   //#define EXTRA_LIN_ADVANCE_K // Enable for second linear advance constants
-  #define LIN_ADVANCE_K 0.22    // Unit: mm compression per 1mm/s extruder speed
+  #define LIN_ADVANCE_K 0.0    // Unit: mm compression per 1mm/s extruder speed
   //#define LA_DEBUG            // If enabled, this will generate debug information output over USB.
   //#define EXPERIMENTAL_SCURVE // Enable this option to permit S-Curve Acceleration
 #endif

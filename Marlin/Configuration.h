@@ -166,7 +166,7 @@
   #define MOTHERBOARD BOARD_CREALITY_F401RE
 #endif
 
-// Name displayed in the LCD "Ready" message and Info menu 
+// Name displayed in the LCD "Ready" message and Info menu
 #define CUSTOM_MACHINE_NAME "Ender-5 S1"
 // #define CUSTOM_MACHINE_NAME "CR-200B"
 // Printer's unique ID, used by some programs to differentiate between machines.
@@ -546,8 +546,8 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else //M301 P16.16 I1.81 D36.03 60w加热管PID  Rock_20220902
-  // M301 P13.13 I0.9 D47.74  武汉参数  16.16 1.81 36.03 深圳参数。  
-    #define DEFAULT_Kp 13.13//16.16 //14.72  
+  // M301 P13.13 I0.9 D47.74  武汉参数  16.16 1.81 36.03 深圳参数。
+    #define DEFAULT_Kp 13.13//16.16 //14.72
     #define DEFAULT_Ki 0.9  //1.81  //1.38
     #define DEFAULT_Kd 47.74//36.03 //39.29
     //14.54#define DEFAULT_Ki 1.08#define DEFAULT_Kd 48.84ok
@@ -858,17 +858,17 @@
  * Override with M201
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-// 
+//
 #if ENABLED(MARRY_HIGHT_SPEED)
   #define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 100, 3000}  //rock_20220418change
-#else 
+#else
   #define DEFAULT_MAX_ACCELERATION      { 500, 500, 100, 1000}  //rock_20220418change
 #endif
 #define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)  //rock_20220418
   #if ENABLED(MARRY_HIGHT_SPEED)
     #define MAX_ACCEL_EDIT_VALUES       { 2000, 2000, 200, 2000 } //rock_20220418change
-  #else 
+  #else
     #define MAX_ACCEL_EDIT_VALUES       { 1000, 1000, 200, 2000 } // ...or, set your own edit limits
   #endif
 #endif
@@ -886,7 +886,7 @@
   #define DEFAULT_ACCELERATION          2000//500    // X, Y, Z and E acceleration for printing moves rock_20220418change
   #define DEFAULT_RETRACT_ACCELERATION  2000//1000   // E acceleration for retracts rock_20220418change
   #define DEFAULT_TRAVEL_ACCELERATION   2000//1000   // X, Y, Z acceleration for travel (non printing) moves rock_20220418change
-#else 
+#else
   #define DEFAULT_ACCELERATION          500    // X, Y, Z and E acceleration for printing moves  rock_20220418
   #define DEFAULT_RETRACT_ACCELERATION  1000   // E acceleration for retracts
   #define DEFAULT_TRAVEL_ACCELERATION   1000   // X, Y, Z acceleration for travel (non printing) moves
@@ -906,7 +906,7 @@
     #define DEFAULT_XJERK 15.0
     #define DEFAULT_YJERK 15.0
     #define DEFAULT_ZJERK  0.4
-  #else 
+  #else
     #define DEFAULT_XJERK 10.0
     #define DEFAULT_YJERK 10.0
     #define DEFAULT_ZJERK  0.4
@@ -943,7 +943,7 @@
  *
  * See https://github.com/synthetos/TinyG/wiki/Jerk-Controlled-Motion-Explained
  */
-#define S_CURVE_ACCELERATION
+//#define S_CURVE_ACCELERATION
 
 //===========================================================================
 //============================= Z Probe Options =============================
@@ -1108,7 +1108,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-// #define NOZZLE_TO_PROBE_OFFSET { -2, 44.45, 0 }//前后安装bltouch 
+// #define NOZZLE_TO_PROBE_OFFSET { -2, 44.45, 0 }//前后安装bltouch
 // #define NOZZLE_TO_PROBE_OFFSET { 38, -9, 0 }//右边安装
 // #define NOZZLE_TO_PROBE_OFFSET { 0, -19, 0 }//前后安装bltouch
 // #define NOZZLE_TO_PROBE_OFFSET { -29.5, -11.3, 0}//左边安装
@@ -1121,7 +1121,7 @@
 #define PROBING_MARGIN 5
 
 // X and Y axis travel speed (mm/min) between probes
-//探头之间的X、Y轴移动速度(mm/min) 
+//探头之间的X、Y轴移动速度(mm/min)
 #define XY_PROBE_FEEDRATE (400*60)
 
 // Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
@@ -1426,46 +1426,46 @@
  *   Probe 3 arbitrary points on the bed (that aren't collinear)
  *   You specify the XY coordinates of all 3 points.
  *   The result is a single tilted plane. Best for a flat bed.
- *探测床上任意3个点(不共线)  
-*指定所有3个点的XY坐标。  
-*结果是一个倾斜的平面。 最适合平板床。 
+ *探测床上任意3个点(不共线)
+*指定所有3个点的XY坐标。
+*结果是一个倾斜的平面。 最适合平板床。
 
  * - AUTO_BED_LEVELING_LINEAR
  *   Probe several points in a grid.
  *   You specify the rectangle and the density of sample points.
  *   The result is a single tilted plane. Best for a flat bed.
 
-  // 探测网格中的几个点。  
-  // 你指定矩形和采样点的密度。  
-  // 结果是一个倾斜的平面。 最适合平板床。 
- 
+  // 探测网格中的几个点。
+  // 你指定矩形和采样点的密度。
+  // 结果是一个倾斜的平面。 最适合平板床。
+
  * - AUTO_BED_LEVELING_BILINEAR
  *   Probe several points in a grid.
  *   You specify the rectangle and the density of sample points.
  *   The result is a mesh, best for large or uneven beds.
- 
-  探测网格中的几个点。  
-  你指定矩形和采样点的密度。  
-  结果是一个网格，最好的大或不均匀的床。   
- 
+
+  探测网格中的几个点。
+  你指定矩形和采样点的密度。
+  结果是一个网格，最好的大或不均匀的床。
+
  * - AUTO_BED_LEVELING_UBL (Unified Bed Leveling)
  *   A comprehensive bed leveling system combining the features and benefits
  *   of other systems. UBL also includes integrated Mesh Generation, Mesh
  *   Validation and Mesh Editing systems.
- **综合床层找平系统  
-*其他系统。 UBL还包括集成网格生成，网格  
-*验证和网格编辑系统。 
+ **综合床层找平系统
+*其他系统。 UBL还包括集成网格生成，网格
+*验证和网格编辑系统。
  * - MESH_BED_LEVELING
  *   Probe a grid manually
  *   The result is a mesh, suitable for large or uneven beds. (See BILINEAR.)
  *   For machines without a probe, Mesh Bed Leveling provides a method to perform
  *   leveling in steps so you can manually adjust the Z height at each grid-point.
  *   With an LCD controller the process is guided step-by-step.
- * *手动探测网格  
-*结果是一个网格，适合大或不均匀的床。 (参见双线性)。  
-*对于没有探针的机器，网床调平提供了一种方法来执行  
-*水平尺的步骤，所以你可以手动调整Z高度在每个网格点。  
-*使用LCD控制器一步步指导过程。 
+ * *手动探测网格
+*结果是一个网格，适合大或不均匀的床。 (参见双线性)。
+*对于没有探针的机器，网床调平提供了一种方法来执行
+*水平尺的步骤，所以你可以手动调整Z高度在每个网格点。
+*使用LCD控制器一步步指导过程。
  */
 //#define AUTO_BED_LEVELING_3POINT
 // #define AUTO_BED_LEVELING_LINEAR
@@ -1555,7 +1555,7 @@
     #define ABL_BILINEAR_SUBDIVISION
     #if ENABLED(ABL_BILINEAR_SUBDIVISION)
       // Number of subdivisions between probe points
-      #define BILINEAR_SUBDIVISIONS 5  //rock_20220331 
+      #define BILINEAR_SUBDIVISIONS 5  //rock_20220331
     #endif
 
   #endif
@@ -2845,5 +2845,5 @@
   #define BLTOUCH_AND_Z_LIMIT
 // #endif
 
-# define DEBUG_M2000 1
+//#define DEBUG_M2000 1
 ///////////////////////////////////////////////////////////
